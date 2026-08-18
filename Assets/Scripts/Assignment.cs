@@ -23,7 +23,19 @@ public class Assignment : MonoBehaviour
     {
         // TODO: Implement logic to determine sign
         // Example: Debug.Log("Positive");
-        throw new System.NotImplementedException();
+        if (as01Number > 0)
+        {
+            Debug.Log("Possitive");
+        }
+        else if (as01Number < 0)
+        {
+            Debug.Log("Negative");
+        }
+        else
+        {
+            Debug.Log("Zero");
+        }
+            throw new System.NotImplementedException();
     }
 
     public int as02Day;
@@ -31,7 +43,35 @@ public class Assignment : MonoBehaviour
     {
         // TODO: Implement logic to return day name
         // Example: Debug.Log("Monday");
-        throw new System.NotImplementedException();
+        if (as02Day == 1)
+        {
+            Debug.Log("Monday");
+        }
+        else if (as02Day == 2)
+        {
+            Debug.Log("Tuesday");
+        }
+        else if (as02Day == 3)
+        {
+            Debug.Log("Wednesday");
+        }
+        else if (as02Day == 4)
+        {
+            Debug.Log("Thursday");
+        }
+        else if (as02Day == 5)
+        {
+            Debug.Log("Friday");
+        }
+        else if (as02Day == 6)
+        {
+            Debug.Log("Saturday");
+        }
+        else if (as02Day == 7)
+        {
+            Debug.Log("Sunday");
+        }
+            throw new System.NotImplementedException();
     }
 
     public string as03InputPassword;
