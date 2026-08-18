@@ -5,16 +5,16 @@ public class Assignment : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // As01_CheckNumberSign();
-        // As02_GetDayName();
-        // As03_ValidatePassword();
-        // As04_GetGrade();
+        //As01_CheckNumberSign();
+        //As02_GetDayName();
+        //As03_ValidatePassword();
+        //As04_GetGrade();
         //As05_IsLeapYear();
-        // As06_Calculate();
-        // As07_GetSeason();
-        // As08_PurchasingSystemExample();
-        // As09_RockPaperScissorsExample();
-        // As10_CalculateWeaponDamage();
+        //As06_Calculate();
+        //As07_GetSeason();
+        //As08_PurchasingSystemExample();
+        //As09_RockPaperScissorsExample();
+        //As10_CalculateWeaponDamage();
         As11_DeterminePlayerRank();
     }
 
@@ -151,10 +151,33 @@ public class Assignment : MonoBehaviour
     {
         // TODO: Implement calculator logic
         // Example: Debug.Log("Result: 42");
-        switch (as06Op)
-        {
-            case + { }
+        double result; switch (as06Op)
 
+        {
+
+            case '+': result = as06Num1 + as06Num2; break;
+
+            case '-': result = as06Num1 - as06Num2; break;
+
+            case '*': result = as06Num1 * as06Num2; break;
+
+            case '/':
+
+                if (as06Num2 == 0)
+                {
+                    Debug.Log("Error: Cannot divide by zero.");
+                }
+                else
+                
+                    result = as06Num1 / as06Num2; break;
+                
+            default:
+
+                Debug.Log("Invalid operator. Please use +, -, *, or /.");
+
+                return;
+
+        }
         throw new System.NotImplementedException();
     }
 
@@ -191,6 +214,42 @@ public class Assignment : MonoBehaviour
     public int as08Payment;
     public void As08_PurchasingSystemExample()
     {
+        if (as08Quantity <= 0)
+
+        {
+
+            Debug.Log("Out of stock");
+
+        }
+        else if (as08Quantity > 0)
+
+        {
+
+            if (as08Payment >= as08Price)
+
+            {
+
+                Debug.Log("You have received the product.");
+
+                if (as08Payment > as08Price)
+
+                {
+
+                    Debug.Log("You have" + (as08Payment - as08Price) + "baht in change.");
+
+                }
+
+            }
+
+            else if (as08Payment < as08Price)
+
+            {
+
+                Debug.Log("You don't have enough money.");
+
+            }
+
+        }
         throw new System.NotImplementedException();
     }
 
@@ -264,6 +323,24 @@ public class Assignment : MonoBehaviour
     {
         // TODO: Add your implementation here
         // Example: Debug.Log("result as string");
+        double multiplier = 1.0; switch (as10WeaponType?.ToLower())
+
+        {
+
+            case "sword": multiplier = 1.3; break;
+
+            case "axe": multiplier = 1.4; break;
+
+            case "bow": multiplier = 1.2; break;
+
+            case "staff": multiplier = 1.5; break;
+
+            case "dagger": multiplier = 1.1; break;
+
+            default: multiplier = 1.0; break;
+
+        }
+        int totalDamage = (int)(as10BaseDamage * multiplier); Debug.Log(totalDamage.ToString());
         throw new System.NotImplementedException();
     }
 
