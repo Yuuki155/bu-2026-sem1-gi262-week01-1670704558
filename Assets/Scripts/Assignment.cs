@@ -9,13 +9,13 @@ public class Assignment : MonoBehaviour
         // As02_GetDayName();
         // As03_ValidatePassword();
         // As04_GetGrade();
-        // As05_IsLeapYear();
+        //As05_IsLeapYear();
         // As06_Calculate();
         // As07_GetSeason();
         // As08_PurchasingSystemExample();
         // As09_RockPaperScissorsExample();
         // As10_CalculateWeaponDamage();
-        // As11_DeterminePlayerRank();
+        As11_DeterminePlayerRank();
     }
 
     public int as01Number;
@@ -71,7 +71,11 @@ public class Assignment : MonoBehaviour
         {
             Debug.Log("Sunday");
         }
-            throw new System.NotImplementedException();
+        else
+        {
+            Debug.Log("Not a day");
+        }
+        throw new System.NotImplementedException();
     }
 
     public string as03InputPassword;
@@ -80,7 +84,15 @@ public class Assignment : MonoBehaviour
     {
         // TODO: Implement password validation logic
         // Example: Debug.Log("True");
-        throw new System.NotImplementedException();
+        if(as03InputPassword == as03CorrectPassword)
+        {
+            Debug.Log("True");
+        }
+        else
+        {
+            Debug.Log("False");
+        }
+            throw new System.NotImplementedException();
     }
 
     public int as04Score;
@@ -88,7 +100,23 @@ public class Assignment : MonoBehaviour
     {
         // TODO: Implement logic to return grade
         // Example: Debug.Log("A");
-        throw new System.NotImplementedException();
+        if(as04Score >= 85)
+        { 
+            Debug.Log("A"); 
+        }
+        else if(as04Score < 85 && as04Score >= 70)
+        {
+            Debug.Log("B");
+        }
+        else if(as04Score < 70 && as04Score >= 50)
+        {
+            Debug.Log("C");
+        }
+        else
+        {  
+            Debug.Log("F");
+        }
+            throw new System.NotImplementedException();
     }
 
     public int as05Year;
@@ -96,7 +124,24 @@ public class Assignment : MonoBehaviour
     {
         // TODO: Implement leap year check logic
         // Example: Debug.Log("True");
-        throw new System.NotImplementedException();
+        if (as05Year % 400 == 0)
+        {
+            Debug.Log("True");
+        }
+        else if (as05Year % 100 == 0)
+        {
+            Debug.Log("False");
+        }
+        else if (as05Year % 4 == 0)
+        {
+            Debug.Log("True");
+        }
+        else
+        {
+            Debug.Log("False");
+        }
+
+            throw new System.NotImplementedException();
     }
 
     public double as06Num1;
@@ -106,6 +151,10 @@ public class Assignment : MonoBehaviour
     {
         // TODO: Implement calculator logic
         // Example: Debug.Log("Result: 42");
+        switch (as06Op)
+        {
+            case + { }
+
         throw new System.NotImplementedException();
     }
 
@@ -114,6 +163,26 @@ public class Assignment : MonoBehaviour
     {
         // TODO: Implement logic to return season
         // Example: Debug.Log("Summer");
+        if(as07Month == 1 ||  as07Month == 2 || as07Month == 12)
+        {
+            Debug.Log("Winter");
+        }
+        else if (as07Month == 3 || as07Month == 4 || as07Month == 5)
+        {
+            Debug.Log("Spring");
+        }
+        else if (as07Month == 6 || as07Month == 7 || as07Month == 8)
+        {
+            Debug.Log("Summer");
+        }
+        else if (as07Month == 9 || as07Month == 10 || as07Month == 11)
+        {
+            Debug.Log("Fall");
+        }
+        else
+        {
+            Debug.Log("Not a month");
+        }
         throw new System.NotImplementedException();
     }
 
@@ -129,6 +198,63 @@ public class Assignment : MonoBehaviour
     public int as09ComputerChoice;
     public void As09_RockPaperScissorsExample()
     {
+        if(as09ComputerChoice == 1)
+        {
+            if(as09UserChoice == 1)
+            {
+                Debug.Log("Tie");
+            }
+            else if(as09UserChoice == 2)
+            {
+                Debug.Log("Win");
+            }
+            else if(as09UserChoice==3)
+            {
+                Debug.Log("Lose");
+            }
+            else
+            {
+                Debug.Log("Choose");
+            }
+        }
+        else if (as09ComputerChoice == 2)
+        {
+            if (as09UserChoice == 1)
+            {
+                Debug.Log("Lose");
+            }
+            else if (as09UserChoice == 2)
+            {
+                Debug.Log("Tie");
+            }
+            else if (as09UserChoice == 3)
+            {
+                Debug.Log("Win");
+            }
+            else
+            {
+                Debug.Log("Choose");
+            }
+        }
+        else if (as09ComputerChoice == 3)
+        {
+            if (as09UserChoice == 1)
+            {
+                Debug.Log("Win");
+            }
+            else if (as09UserChoice == 2)
+            {
+                Debug.Log("Lose");
+            }
+            else if (as09UserChoice == 3)
+            {
+                Debug.Log("Tie");
+            }
+            else
+            {
+                Debug.Log("Choose");
+            }
+        }
         throw new System.NotImplementedException();
     }
 
@@ -147,6 +273,45 @@ public class Assignment : MonoBehaviour
     {
         // TODO: Add your implementation here
         // Example: Debug.Log("result as string");
-        throw new System.NotImplementedException();
+        if (as11Score < 0 || as11CompletionTime < 0)
+             {
+             Debug.Log("Invalid score or time");
+             return;
+             }
+            
+             string rank; int baseCoins;
+             if (as11Score >= 8000) 
+        { 
+            rank = "Gold"; 
+            baseCoins = 100; 
+        }
+             else if (as11Score >= 6000 && as11Score < 8000) 
+        { 
+            rank = "Silver"; 
+            baseCoins = 75; 
+        }
+             else if (as11Score >= 4000 && as11Score < 2000)
+        {
+            rank = "Bronze";
+            baseCoins = 50;
+        }
+             else
+        {
+            rank = "None";
+            baseCoins = 0;
+        }
+
+        int timeBonus = 0;
+        if (as11CompletionTime <= 30)
+        {
+            timeBonus = 25;
+        }
+        else if (as11CompletionTime <= 60)
+        {
+            timeBonus = 10;
+        }
+            int totalCoins = baseCoins + timeBonus;
+            Debug.Log($"{rank} Rank - {totalCoins} coins earned!");
+            throw new System.NotImplementedException();
     }
 }
